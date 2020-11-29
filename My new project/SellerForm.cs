@@ -51,20 +51,24 @@ namespace My_new_project
         private void SellerForm_Load(object sender, EventArgs e)
         {
             populate();
+            EID.Hide();
+            label3.Hide();
+            label9.Hide();
+            label10.Hide();
         }
 
         private void label8_Click(object sender, EventArgs e)
         {
             try
             {
-                if (EID.Text == "" || EName.Text == "" || EAge.Text == "" || EPhone.Text == "" || ECNIC.Text == "" || EPass.Text == "")
+                if (EName.Text == "" || EAge.Text == "" || EPhone.Text == "" || ECNIC.Text == "" || EPass.Text == "")
                 {
                     MessageBox.Show("Feilds are empty");
                 }
                 else
                 {
                     Con.Open();
-                    String query = "insert into SellerTable values(" + EID.Text + ",'" + EName.Text + "','" + EAge.Text + "','" + EPhone.Text + "','" + ECNIC.Text + "','" + EPass.Text + "')";
+                    String query = "insert into SellerTable (SellerName,SellerAge,SellerNumber,SellerIDCard,SellerPassword) values('" + EName.Text + "','" + EAge.Text + "','" + EPhone.Text + "','" + ECNIC.Text + "','" + EPass.Text + "')";
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Employee is added Successfully");
@@ -81,6 +85,7 @@ namespace My_new_project
         }
         private void populate()
         {
+            //SellerName,SellerAge,SellerNumber,SellerIDCard,SellerPassword
             Con.Open();
             String query = "select * from SellerTable";
             SqlDataAdapter sda = new SqlDataAdapter(query, Con);
@@ -88,11 +93,15 @@ namespace My_new_project
             var ds = new DataSet();
             sda.Fill(ds);
             EmpDGV.DataSource = ds.Tables[0];
+            
             Con.Close();
         }
 
         private void EmpDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            label9.Show();
+            label10.Show();
+            label8.Hide();
             EID.Text = EmpDGV.SelectedRows[0].Cells[0].Value.ToString();
             EName.Text = EmpDGV.SelectedRows[0].Cells[1].Value.ToString();
             EAge.Text = EmpDGV.SelectedRows[0].Cells[2].Value.ToString();
@@ -112,11 +121,16 @@ namespace My_new_project
 
         private void label16_Click(object sender, EventArgs e)
         {
+            label8.Show();
+            label9.Hide();
+            label10.Hide();
             cleartext();
         }
 
         private void label10_Click(object sender, EventArgs e)
         {
+            
+            
             try
             {
                 if (EID.Text == "")
@@ -125,14 +139,28 @@ namespace My_new_project
                 }
                 else
                 {
-                    Con.Open();
-                    String query = "delete from SellerTable where SellerID = " + EID.Text + "";
-                    SqlCommand cmd = new SqlCommand(query, Con);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Category is deleted Successfully");
-                    Con.Close();
-                    populate();
-                    cleartext();
+
+                    DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete the employee information ?", "Some Title", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        Con.Open();
+                        String query = "delete from SellerTable where SellerID = " + EID.Text + "";
+                        SqlCommand cmd = new SqlCommand(query, Con);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Category is deleted Successfully");
+                        Con.Close();
+                        populate();
+                        cleartext();
+                        label8.Show();
+                        label9.Hide();
+                        label10.Hide();
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+                        //do something else
+                    }
+                   
+                    
                 }
             }
             catch (Exception ex)
@@ -140,6 +168,7 @@ namespace My_new_project
                 MessageBox.Show(ex.Message);
                 Con.Close();
             }
+            
         }
 
         private void label9_Click(object sender, EventArgs e)
@@ -160,6 +189,9 @@ namespace My_new_project
                     Con.Close();
                     populate();
                     cleartext();
+                    label9.Hide();
+                    label10.Hide();
+                    label8.Show();
                 }
             }
             catch (Exception ex)
@@ -167,6 +199,7 @@ namespace My_new_project
                 MessageBox.Show(ex.Message);
                 Con.Close();
             }
+            
         }
 
         private void label17_Click(object sender, EventArgs e)
@@ -296,6 +329,11 @@ namespace My_new_project
             {
                 e.Handled = true;
             }
+        }
+
+        private void label13_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

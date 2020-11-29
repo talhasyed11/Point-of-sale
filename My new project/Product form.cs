@@ -53,8 +53,12 @@ namespace My_new_project
 
         private void Product_form_Load(object sender, EventArgs e)
         {
+            edit.Hide();
+            delete.Hide();
             fillcombo();
             populate();
+            ProID.Hide();
+            label3.Hide();
         }
 
         private void label13_Click(object sender, EventArgs e)
@@ -66,7 +70,7 @@ namespace My_new_project
 
         private void label8_Click(object sender, EventArgs e)
         {
-            if (ProID.Text == "" || ProName.Text == "" || ProQty.Text == "" || ProPrice.Text == "")
+            if ( ProName.Text == "" || ProQty.Text == "" || ProPrice.Text == "")
             {
                 MessageBox.Show("Please enter the product details");
             }
@@ -75,7 +79,8 @@ namespace My_new_project
                 try
                 {
                     Con.Open();
-                    String query = "insert into ProductTable values(" + ProID.Text + ",'" + ProName.Text + "','" + ProQty.Text + "','" + categorycombo.SelectedValue.ToString() + "','" + ProPrice.Text + "')";
+                    String query = "insert into ProductTable (" +
+                        "ProductName,ProductQty,Productcategory,Price) values('" + ProName.Text + "','" + ProQty.Text + "','" + categorycombo.SelectedValue.ToString() + "','" + ProPrice.Text + "')";
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Product added Successfully");
@@ -105,6 +110,9 @@ namespace My_new_project
 
         private void ProDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            add.Hide();
+            edit.Show();
+            delete.Show();
             ProID.Text = ProDGV.SelectedRows[0].Cells[0].Value.ToString();
             ProName.Text = ProDGV.SelectedRows[0].Cells[1].Value.ToString();
             ProQty.Text = ProDGV.SelectedRows[0].Cells[2].Value.ToString();
@@ -116,6 +124,7 @@ namespace My_new_project
         {
             try
             {
+                
                 Con.Open();
                 String query = "delete from ProductTable where ProductID = "+ ProID.Text+"";
                 SqlCommand cmd = new SqlCommand(query, Con);
@@ -124,6 +133,9 @@ namespace My_new_project
                 Con.Close();
                 populate();
                 cleartext();
+                add.Show();
+                edit.Hide();
+                delete.Hide();
 
             }
             catch (Exception ex)
@@ -159,6 +171,9 @@ namespace My_new_project
                     Con.Close();
                     populate();
                     cleartext();
+                    add.Show();
+                    edit.Hide();
+                    delete.Hide();
                 }
             }
             catch (Exception ex)
@@ -309,7 +324,20 @@ namespace My_new_project
                 e.Handled = true;
             }
         }
-       
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+            cleartext();
+            populate();
+            edit.Hide();
+            delete.Hide();
+            add.Show();
+        }
+
+        private void label8_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
     }
 

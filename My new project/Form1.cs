@@ -31,9 +31,9 @@ namespace My_new_project
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
-
+        
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -108,6 +108,11 @@ namespace My_new_project
 
                
             }
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

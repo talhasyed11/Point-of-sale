@@ -29,9 +29,9 @@ namespace My_new_project
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -54,6 +54,7 @@ namespace My_new_project
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmpDGV)).BeginInit();
             this.SuspendLayout();
@@ -64,7 +65,7 @@ namespace My_new_project
             this.label10.BackColor = System.Drawing.Color.White;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label10.Location = new System.Drawing.Point(243, 371);
+            this.label10.Location = new System.Drawing.Point(195, 356);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(69, 23);
             this.label10.TabIndex = 18;
@@ -77,7 +78,7 @@ namespace My_new_project
             this.label9.BackColor = System.Drawing.Color.White;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label9.Location = new System.Drawing.Point(144, 371);
+            this.label9.Location = new System.Drawing.Point(36, 356);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(46, 23);
             this.label9.TabIndex = 17;
@@ -90,17 +91,18 @@ namespace My_new_project
             this.label8.BackColor = System.Drawing.Color.White;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label8.Location = new System.Drawing.Point(38, 371);
+            this.label8.Location = new System.Drawing.Point(85, 318);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(50, 23);
+            this.label8.Size = new System.Drawing.Size(148, 23);
             this.label8.TabIndex = 16;
-            this.label8.Text = "ADD";
+            this.label8.Text = "Add Employee";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.label16);
@@ -149,7 +151,7 @@ namespace My_new_project
             this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label17.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label17.Location = new System.Drawing.Point(12, 9);
+            this.label17.Location = new System.Drawing.Point(8, 9);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(189, 25);
             this.label17.TabIndex = 29;
@@ -162,7 +164,7 @@ namespace My_new_project
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(155, 440);
+            this.label16.Location = new System.Drawing.Point(105, 392);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(76, 28);
             this.label16.TabIndex = 27;
@@ -183,38 +185,38 @@ namespace My_new_project
             // 
             // EmpDGV
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.EmpDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.EmpDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.EmpDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.EmpDGV.BackgroundColor = System.Drawing.Color.White;
             this.EmpDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EmpDGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.EmpDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.EmpDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.EmpDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.EmpDGV.ColumnHeadersHeight = 25;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.EmpDGV.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.EmpDGV.DefaultCellStyle = dataGridViewCellStyle3;
             this.EmpDGV.EnableHeadersVisualStyles = false;
             this.EmpDGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.EmpDGV.Location = new System.Drawing.Point(344, 92);
+            this.EmpDGV.Location = new System.Drawing.Point(312, 92);
             this.EmpDGV.Name = "EmpDGV";
             this.EmpDGV.ReadOnly = true;
             this.EmpDGV.RowHeadersVisible = false;
             this.EmpDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.EmpDGV.Size = new System.Drawing.Size(583, 446);
+            this.EmpDGV.Size = new System.Drawing.Size(615, 446);
             this.EmpDGV.TabIndex = 25;
             this.EmpDGV.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.EmpDGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -246,7 +248,7 @@ namespace My_new_project
             this.EPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.EPass.Location = new System.Drawing.Point(143, 318);
+            this.EPass.Location = new System.Drawing.Point(112, 277);
             this.EPass.Name = "EPass";
             this.EPass.Size = new System.Drawing.Size(184, 23);
             this.EPass.TabIndex = 24;
@@ -258,7 +260,7 @@ namespace My_new_project
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(4, 318);
+            this.label1.Location = new System.Drawing.Point(4, 277);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 23);
             this.label1.TabIndex = 23;
@@ -271,7 +273,7 @@ namespace My_new_project
             this.EPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.EPhone.Location = new System.Drawing.Point(143, 229);
+            this.EPhone.Location = new System.Drawing.Point(112, 188);
             this.EPhone.Mask = "0000000000";
             this.EPhone.Name = "EPhone";
             this.EPhone.Size = new System.Drawing.Size(184, 23);
@@ -285,7 +287,7 @@ namespace My_new_project
             this.ECNIC.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ECNIC.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ECNIC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.ECNIC.Location = new System.Drawing.Point(143, 274);
+            this.ECNIC.Location = new System.Drawing.Point(112, 233);
             this.ECNIC.Mask = "0000000000000";
             this.ECNIC.Name = "ECNIC";
             this.ECNIC.Size = new System.Drawing.Size(184, 23);
@@ -299,7 +301,7 @@ namespace My_new_project
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(4, 274);
+            this.label7.Location = new System.Drawing.Point(4, 233);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(96, 23);
             this.label7.TabIndex = 14;
@@ -312,7 +314,7 @@ namespace My_new_project
             this.EName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.EName.Location = new System.Drawing.Point(143, 135);
+            this.EName.Location = new System.Drawing.Point(112, 94);
             this.EName.Name = "EName";
             this.EName.Size = new System.Drawing.Size(184, 23);
             this.EName.TabIndex = 13;
@@ -324,7 +326,7 @@ namespace My_new_project
             this.EAge.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EAge.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.EAge.Location = new System.Drawing.Point(143, 181);
+            this.EAge.Location = new System.Drawing.Point(112, 140);
             this.EAge.Mask = "00";
             this.EAge.Name = "EAge";
             this.EAge.Size = new System.Drawing.Size(184, 23);
@@ -336,10 +338,12 @@ namespace My_new_project
             // 
             this.EID.BackColor = System.Drawing.Color.White;
             this.EID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.EID.Enabled = false;
             this.EID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.EID.Location = new System.Drawing.Point(143, 92);
+            this.EID.Location = new System.Drawing.Point(112, 53);
             this.EID.Name = "EID";
+            this.EID.ReadOnly = true;
             this.EID.Size = new System.Drawing.Size(184, 23);
             this.EID.TabIndex = 11;
             this.EID.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.EID_MaskInputRejected);
@@ -351,7 +355,7 @@ namespace My_new_project
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(4, 229);
+            this.label6.Location = new System.Drawing.Point(4, 188);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 23);
             this.label6.TabIndex = 9;
@@ -364,7 +368,7 @@ namespace My_new_project
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(4, 181);
+            this.label5.Location = new System.Drawing.Point(4, 140);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 23);
             this.label5.TabIndex = 8;
@@ -377,7 +381,7 @@ namespace My_new_project
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(4, 135);
+            this.label4.Location = new System.Drawing.Point(4, 94);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 23);
             this.label4.TabIndex = 7;
@@ -390,7 +394,7 @@ namespace My_new_project
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(4, 92);
+            this.label3.Location = new System.Drawing.Point(4, 53);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(28, 23);
             this.label3.TabIndex = 6;
@@ -410,6 +414,19 @@ namespace My_new_project
             this.label2.Text = "Manage Employee";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(910, -1);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(28, 30);
+            this.label13.TabIndex = 33;
+            this.label13.Text = "X";
+            this.label13.Click += new System.EventHandler(this.label13_Click_1);
+            // 
             // SellerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -417,7 +434,7 @@ namespace My_new_project
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(940, 551);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SellerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SellerForm";
@@ -452,5 +469,6 @@ namespace My_new_project
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }

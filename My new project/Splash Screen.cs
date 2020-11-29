@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Runtime.InteropServices;
 namespace My_new_project
 {
     public partial class Splash_Screen : Form
@@ -38,13 +38,12 @@ namespace My_new_project
 
         private void label2_Click(object sender, EventArgs e)
         {
-
+            
         }
 
-        private void guna2CircleProgressBar1_ValueChanged(object sender, EventArgs e)
+        private void progressBar_Click(object sender, EventArgs e)
         {
-           
-        }
 
+        }
     }
 }

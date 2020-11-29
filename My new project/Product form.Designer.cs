@@ -29,9 +29,9 @@ namespace My_new_project
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -44,6 +44,9 @@ namespace My_new_project
             this.label7 = new System.Windows.Forms.Label();
             this.ProPrice = new System.Windows.Forms.MaskedTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.categorycombo2 = new System.Windows.Forms.ComboBox();
             this.logout = new System.Windows.Forms.Label();
             this.backtomain = new System.Windows.Forms.Label();
             this.ProDGV = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -51,8 +54,7 @@ namespace My_new_project
             this.delete = new System.Windows.Forms.Label();
             this.edit = new System.Windows.Forms.Label();
             this.add = new System.Windows.Forms.Label();
-            this.categorycombo2 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProDGV)).BeginInit();
             this.SuspendLayout();
@@ -125,7 +127,9 @@ namespace My_new_project
             // categorycombo
             // 
             this.categorycombo.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.categorycombo.AllowDrop = true;
             this.categorycombo.Cursor = System.Windows.Forms.Cursors.Default;
+            this.categorycombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.categorycombo.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.categorycombo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.categorycombo.FormattingEnabled = true;
@@ -137,17 +141,18 @@ namespace My_new_project
             this.categorycombo.Name = "categorycombo";
             this.categorycombo.Size = new System.Drawing.Size(190, 24);
             this.categorycombo.TabIndex = 10;
-            this.categorycombo.Text = "Select Category";
             this.categorycombo.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // ProID
             // 
             this.ProID.BackColor = System.Drawing.Color.White;
             this.ProID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ProID.Enabled = false;
             this.ProID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.ProID.Location = new System.Drawing.Point(161, 81);
             this.ProID.Name = "ProID";
+            this.ProID.ReadOnly = true;
             this.ProID.Size = new System.Drawing.Size(190, 23);
             this.ProID.TabIndex = 11;
             this.ProID.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.ProID_MaskInputRejected);
@@ -208,6 +213,8 @@ namespace My_new_project
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.categorycombo2);
             this.panel1.Controls.Add(this.logout);
@@ -233,6 +240,52 @@ namespace My_new_project
             this.panel1.Size = new System.Drawing.Size(943, 551);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(137, 381);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(63, 25);
+            this.label11.TabIndex = 39;
+            this.label11.Text = "Clear";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(367, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(120, 25);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "All Products";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // categorycombo2
+            // 
+            this.categorycombo2.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.categorycombo2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.categorycombo2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.categorycombo2.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.categorycombo2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.categorycombo2.FormattingEnabled = true;
+            this.categorycombo2.Items.AddRange(new object[] {
+            "Shawls",
+            "Suits",
+            "Trousers"});
+            this.categorycombo2.Location = new System.Drawing.Point(538, 50);
+            this.categorycombo2.Name = "categorycombo2";
+            this.categorycombo2.Size = new System.Drawing.Size(177, 24);
+            this.categorycombo2.TabIndex = 37;
+            this.categorycombo2.SelectedIndexChanged += new System.EventHandler(this.categorycombo2_SelectedIndexChanged);
             // 
             // logout
             // 
@@ -264,30 +317,30 @@ namespace My_new_project
             // 
             // ProDGV
             // 
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
-            this.ProDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.ProDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.ProDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ProDGV.BackgroundColor = System.Drawing.Color.White;
             this.ProDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ProDGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.ProDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.ProDGV.ColumnHeadersHeight = 25;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ProDGV.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ProDGV.DefaultCellStyle = dataGridViewCellStyle3;
             this.ProDGV.EnableHeadersVisualStyles = false;
             this.ProDGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.ProDGV.Location = new System.Drawing.Point(367, 77);
@@ -341,7 +394,7 @@ namespace My_new_project
             this.delete.BackColor = System.Drawing.Color.White;
             this.delete.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.delete.Location = new System.Drawing.Point(270, 340);
+            this.delete.Location = new System.Drawing.Point(248, 326);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(69, 23);
             this.delete.TabIndex = 18;
@@ -354,7 +407,7 @@ namespace My_new_project
             this.edit.BackColor = System.Drawing.Color.White;
             this.edit.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.edit.Location = new System.Drawing.Point(173, 340);
+            this.edit.Location = new System.Drawing.Point(151, 326);
             this.edit.Name = "edit";
             this.edit.Size = new System.Drawing.Size(46, 23);
             this.edit.TabIndex = 17;
@@ -367,44 +420,25 @@ namespace My_new_project
             this.add.BackColor = System.Drawing.Color.White;
             this.add.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.add.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.add.Location = new System.Drawing.Point(67, 340);
+            this.add.Location = new System.Drawing.Point(45, 326);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(50, 23);
             this.add.TabIndex = 16;
             this.add.Text = "ADD";
             this.add.Click += new System.EventHandler(this.label8_Click);
             // 
-            // categorycombo2
+            // label8
             // 
-            this.categorycombo2.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.categorycombo2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.categorycombo2.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.categorycombo2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.categorycombo2.FormattingEnabled = true;
-            this.categorycombo2.Items.AddRange(new object[] {
-            "Shawls",
-            "Suits",
-            "Trousers"});
-            this.categorycombo2.Location = new System.Drawing.Point(538, 50);
-            this.categorycombo2.Name = "categorycombo2";
-            this.categorycombo2.Size = new System.Drawing.Size(177, 24);
-            this.categorycombo2.TabIndex = 37;
-            this.categorycombo2.Text = "Select Category";
-            this.categorycombo2.SelectedIndexChanged += new System.EventHandler(this.categorycombo2_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(367, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 25);
-            this.label1.TabIndex = 38;
-            this.label1.Text = "All Products";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(914, -1);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(28, 30);
+            this.label8.TabIndex = 40;
+            this.label8.Text = "X";
+            this.label8.Click += new System.EventHandler(this.label8_Click_1);
             // 
             // Product_form
             // 
@@ -413,7 +447,7 @@ namespace My_new_project
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(937, 551);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Product_form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Product_form";
@@ -447,5 +481,7 @@ namespace My_new_project
         private System.Windows.Forms.Label logout;
         private System.Windows.Forms.ComboBox categorycombo2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label8;
     }
 }

@@ -39,6 +39,7 @@ namespace My_new_project
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -170,12 +171,26 @@ namespace My_new_project
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(712, -2);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(28, 30);
+            this.label6.TabIndex = 32;
+            this.label6.Text = "X";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(739, 358);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Role);
@@ -186,7 +201,7 @@ namespace My_new_project
             this.Controls.Add(this.Pass);
             this.Controls.Add(this.Uname);
             this.Controls.Add(this.pictureBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -209,6 +224,7 @@ namespace My_new_project
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label6;
     }
 }
 

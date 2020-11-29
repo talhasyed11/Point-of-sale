@@ -38,9 +38,10 @@ namespace My_new_project
         private void Shopform_Load(object sender, EventArgs e)
         {
             populate();
-            Datelbl.Text = DateTime.Today.Day.ToString() + "-" + DateTime.Today.Month.ToString() + "-" + DateTime.Today.Year.ToString() + "  " + DateTime.Now.ToString("h:mm tt");
             SellerName.Text = Form1.SetValueForText1;
             fillcombo();
+            timer1.Start();
+            
             
           
         }
@@ -396,6 +397,17 @@ namespace My_new_project
             {
                 e.Handled = true;
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DateTime dateTime = DateTime.Now;
+            this.Datelbl.Text = dateTime.ToString();
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

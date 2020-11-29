@@ -52,5 +52,15 @@ namespace My_new_project
             cf.Show();
             this.Hide();
         }
+
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //guna2DataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
