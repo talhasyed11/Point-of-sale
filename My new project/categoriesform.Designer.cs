@@ -49,7 +49,6 @@ namespace My_new_project
             this.CatID = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CatDGV)).BeginInit();
             this.SuspendLayout();
@@ -154,7 +153,7 @@ namespace My_new_project
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel1.Controls.Add(this.label6);
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.label11);
@@ -171,7 +170,7 @@ namespace My_new_project
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(943, 587);
+            this.panel1.Size = new System.Drawing.Size(940, 587);
             this.panel1.TabIndex = 29;
             // 
             // label1
@@ -308,19 +307,6 @@ namespace My_new_project
             this.bunifuDragControl1.TargetControl = null;
             this.bunifuDragControl1.Vertical = true;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(912, 1);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(28, 30);
-            this.label6.TabIndex = 34;
-            this.label6.Text = "X";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
             // categoriesform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -328,10 +314,12 @@ namespace My_new_project
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(940, 551);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "categoriesform";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "categoriesform";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.categoriesform_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.categoriesform_FormClosed);
             this.Load += new System.EventHandler(this.categoriesform_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -357,6 +345,5 @@ namespace My_new_project
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MaskedTextBox CatID;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label6;
     }
 }

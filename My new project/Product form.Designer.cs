@@ -54,7 +54,6 @@ namespace My_new_project
             this.delete = new System.Windows.Forms.Label();
             this.edit = new System.Windows.Forms.Label();
             this.add = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProDGV)).BeginInit();
             this.SuspendLayout();
@@ -213,7 +212,6 @@ namespace My_new_project
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.categorycombo2);
@@ -235,9 +233,9 @@ namespace My_new_project
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(-3, 0);
+            this.panel1.Location = new System.Drawing.Point(-3, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(943, 551);
+            this.panel1.Size = new System.Drawing.Size(941, 553);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -248,7 +246,7 @@ namespace My_new_project
             this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(137, 381);
+            this.label11.Location = new System.Drawing.Point(150, 369);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(63, 25);
             this.label11.TabIndex = 39;
@@ -392,53 +390,43 @@ namespace My_new_project
             // 
             this.delete.AutoSize = true;
             this.delete.BackColor = System.Drawing.Color.White;
+            this.delete.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.delete.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.delete.Location = new System.Drawing.Point(248, 326);
+            this.delete.Location = new System.Drawing.Point(205, 335);
             this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(69, 23);
+            this.delete.Size = new System.Drawing.Size(148, 25);
             this.delete.TabIndex = 18;
-            this.delete.Text = "DELETE";
+            this.delete.Text = "Delete Product";
             this.delete.Click += new System.EventHandler(this.label10_Click);
             // 
             // edit
             // 
             this.edit.AutoSize = true;
             this.edit.BackColor = System.Drawing.Color.White;
+            this.edit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.edit.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.edit.Location = new System.Drawing.Point(151, 326);
+            this.edit.Location = new System.Drawing.Point(28, 335);
             this.edit.Name = "edit";
-            this.edit.Size = new System.Drawing.Size(46, 23);
+            this.edit.Size = new System.Drawing.Size(122, 25);
             this.edit.TabIndex = 17;
-            this.edit.Text = "EDIT";
+            this.edit.Text = "Edit Product";
             this.edit.Click += new System.EventHandler(this.label9_Click);
             // 
             // add
             // 
             this.add.AutoSize = true;
             this.add.BackColor = System.Drawing.Color.White;
+            this.add.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.add.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.add.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.add.Location = new System.Drawing.Point(45, 326);
+            this.add.Location = new System.Drawing.Point(121, 302);
             this.add.Name = "add";
-            this.add.Size = new System.Drawing.Size(50, 23);
+            this.add.Size = new System.Drawing.Size(128, 25);
             this.add.TabIndex = 16;
-            this.add.Text = "ADD";
+            this.add.Text = "Add Product";
             this.add.Click += new System.EventHandler(this.label8_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(914, -1);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(28, 30);
-            this.label8.TabIndex = 40;
-            this.label8.Text = "X";
-            this.label8.Click += new System.EventHandler(this.label8_Click_1);
             // 
             // Product_form
             // 
@@ -447,10 +435,11 @@ namespace My_new_project
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(937, 551);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Product_form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Product_form";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Product_form_FormClosing);
             this.Load += new System.EventHandler(this.Product_form_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -482,6 +471,5 @@ namespace My_new_project
         private System.Windows.Forms.ComboBox categorycombo2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label8;
     }
 }

@@ -200,5 +200,15 @@ namespace My_new_project
         {
             Application.Exit();
         }
+
+        private void categoriesform_FormClosed(object sender, FormClosedEventArgs e)
+        {
+          
+        }
+
+        private void categoriesform_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

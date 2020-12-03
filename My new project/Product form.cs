@@ -334,7 +334,9 @@ namespace My_new_project
             add.Show();
         }
 
-        private void label8_Click_1(object sender, EventArgs e)
+       
+
+        private void Product_form_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }

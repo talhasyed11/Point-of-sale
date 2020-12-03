@@ -335,5 +335,10 @@ namespace My_new_project
         {
             Application.Exit();
         }
+
+        private void SellerForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

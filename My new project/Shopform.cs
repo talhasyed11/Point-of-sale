@@ -154,11 +154,11 @@ namespace My_new_project
 
         private void add_Click(object sender, EventArgs e)
         {
-
+            int a = 0;
             //count rows
             //int rows =  Orderdgv.Rows.Count;
             //rows = rows - 1;
-
+            int insertid = 0;
             //Count number of products from grid view
             int sum = 0;
             for (int i = 0; i < Orderdgv.Rows.Count; ++i)
@@ -167,61 +167,80 @@ namespace My_new_project
             }
             // MessageBox.Show(sum.ToString()) ;
 
-
-
-
-                if (ReceivedAmount.Text == "") {
-                ReceivedAmount.Text = TotalPrice.Text;
                 
+
+            //Remaining amount checks
+                if (ReceivedAmount.Text == "") 
+                {
+                     if (Convert.ToInt32(TotalPrice.Text) < 0)
+                     {
+                        ReceivedAmount.Text = TotalPrice.Text;
+                    ReceivedAmount.Text =  "-" + ReceivedAmount.Text;
+                     }
+                        ReceivedAmount.Text = TotalPrice.Text;
+
                 }
-
+                //inseted bill id
+                
                 int remaining = Convert.ToInt32(ReceivedAmount.Text) - Convert.ToInt32(TotalPrice.Text);
-
+                
                 if (remaining < 0)
                 {
                     MessageBox.Show("INVALID AMOUNT RECEIVED");
 
                 }
-                else
+             else
                 {
 
                 try
                 {
+                    
+                    //Add BIll details into billdb
+                    // only add billid,qty,amount , seller name
+                    MessageBox.Show(a.ToString());
+                    a++;
                     DateTime dateTime = DateTime.Now;
                     Con.Open();
                     String query = "insert into billdb (items, amount, seller,date) values('" + sum.ToString() + "','" + TotalPrice.Text + "','" 
-                        + Form1.SetValueForText1 + "','" + dateTime.ToShortDateString() + "')";
+                        + Form1.SetValueForText1 + "','" + dateTime.ToShortDateString() + "'); select @@identity;";
                     SqlCommand cmd = new SqlCommand(query, Con);
-                    cmd.ExecuteNonQuery();
+                    //cmd.ExecuteNonQuery();
+                    insertid = int.Parse(cmd.ExecuteScalar().ToString());
+                    MessageBox.Show(insertid.ToString());
+                    
                     Con.Close();
                 }
                 catch (Exception ex) {
                     MessageBox.Show(ex.Message);
                     }
+
+                int check = Convert.ToInt32(TotalPrice.Text);
+
+                if (check <0) {
+                    MessageBox.Show("Total Products = " + sum.ToString() + "\n" + "Total Bill = " + TotalPrice.Text +  "\n" + "Customer Remaining Change = " + remaining);
+
+                }
+                if (check > 0) { 
+                //Show the change
                 MessageBox.Show("Total Products = "  +sum.ToString() + "\n" +   "Total Bill = " + TotalPrice.Text + "\n" + "Amount Recieved= " + ReceivedAmount.Text + "\n" + "Change = " + remaining);
-                //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                ///?///////////////////////////
-                //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                ///?///////////////////////////
-                //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                ///?///////////////////////////
-                //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+              }
+                
                 int i = 0;
                 //MessageBox.Show("Yahan se");
+
+                //
+
+                //Insert items into table
+
+                //
                     for (i = 0; i < Orderdgv.Rows.Count-1; i++)
                     {
-                    if (i == 0)
-                    {
-
-                    }
-                    else
-                    {
+                    
                         try
                         {
                             Con.Open();
-                            string StrQuery = "INSERT INTO solditems (pid, pname, pprice,pqty,total) VALUES ('" + Orderdgv.Rows[i].Cells[0].Value + "', '"
+                           // MessageBox.Show("Yahse");
+                            string StrQuery = "INSERT INTO solditems (pid,billid, pname, pprice,pqty,total) VALUES ('" + Orderdgv.Rows[i].Cells[0].Value + "', '"+ insertid + "', '"
                             + Orderdgv.Rows[i].Cells[1].Value + "', '" + Orderdgv.Rows[i].Cells[2].Value + "', '" + Orderdgv.Rows[i].Cells[3].Value + "', '" + Orderdgv.Rows[i].Cells[4].Value + "')";
                             SqlCommand cmd = new SqlCommand(StrQuery, Con);
                             cmd.ExecuteNonQuery();
@@ -232,10 +251,9 @@ namespace My_new_project
                             MessageBox.Show(ex.Message);
                             Con.Close();
                         }
-                    }
+                    
                     }
 
-                //MessageBox.Show("Yahan tak");
 
 
 
@@ -298,7 +316,7 @@ namespace My_new_project
                 SqlCommand cmd = new SqlCommand(query, Con);
                 Con.Open();
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Category is Updated Successfully");
+                //MessageBox.Show("Category is Updated Successfully");
                 Con.Close();
             }
             catch (Exception ex) {
@@ -406,6 +424,82 @@ namespace My_new_project
         }
 
         private void label11_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+            
+            if (ProName.Text == "" || ProPrice.Text == ""||ProQty.Text == ""|| ProQty.Text == "0"||Convert.ToInt32(ProQty.Text)<1 )
+            {
+                
+                 MessageBox.Show("Please select the Valid entries");
+                
+            }
+            else
+            {
+                int remainingitems;
+                SqlCommand command =
+                   new SqlCommand("select ProductQty from ProductTable WHERE Productid= "+Productid.Text+"", Con);
+                Con.Open();
+
+                SqlDataReader read = command.ExecuteReader();
+
+                read.Read();
+                
+                    dbproqty = (read["ProductQty"].ToString());
+                    
+                        Con.Close();
+                        remainingitems = Convert.ToInt32(dbproqty)+Convert.ToInt32(ProQty.Text);
+                        
+                        String query = "update ProductTable set ProductQty='" + remainingitems + "'where Productid = " + Productid.Text + "";
+                        SqlCommand cmd = new SqlCommand(query, Con);
+                        Con.Open();
+                        cmd.ExecuteNonQuery();
+                        
+                        //MessageBox.Show("Category is Updated Successfully");
+                        Con.Close();
+
+
+
+                        DataGridViewRow newrow = new DataGridViewRow();
+                        newrow.CreateCells(Orderdgv);
+                        newrow.Cells[0].Value = Productid.Text;
+                        newrow.Cells[1].Value = ProName.Text;
+                        newrow.Cells[2].Value = ProPrice.Text;
+                        newrow.Cells[3].Value = ProQty.Text;
+                        newrow.Cells[4].Value = -(Convert.ToInt32(ProPrice.Text) * Convert.ToInt32(ProQty.Text));
+                        int totalprice = Convert.ToInt32(ProPrice.Text) * Convert.ToInt32(ProQty.Text);
+                        Orderdgv.Rows.Add(newrow);
+                //gridtotal = (gridtotal + totalprice);
+                //TotalPrice.Text = gridtotal.ToString();
+                    int sum = 0;
+                    for (int i = 0; i < Orderdgv.Rows.Count; ++i)
+                    {
+                        sum += Convert.ToInt32(Orderdgv.Rows[i].Cells[4].Value);
+                    }
+                TotalPrice.Text = sum.ToString();
+                ProQty.Clear();
+                        ProName.Clear();
+                        ProPrice.Clear();
+                        Productid.Clear();
+                        populate();
+                        
+
+                    
+                
+                read.Close();
+
+            }
+        }
+
+        private void TotalPrice_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void Shopform_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }

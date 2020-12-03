@@ -52,13 +52,26 @@ namespace My_new_project
             cf.Show();
             this.Hide();
         }
-
+        public static string billid;
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //guna2DataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            //MessageBox.Show("hit");
+            billid = guna2DataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+            billdetails cf = new billdetails();
+            cf.Show();
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Sales_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
+        private void Sales_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }

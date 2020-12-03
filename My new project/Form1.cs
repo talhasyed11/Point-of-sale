@@ -114,5 +114,15 @@ namespace My_new_project
         {
             Application.Exit();
         }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //Application.Exit();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

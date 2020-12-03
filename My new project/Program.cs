@@ -16,7 +16,7 @@ namespace My_new_project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Splash_Screen());
+            Application.Run(new SellerForm()) ;
 
         }
     }

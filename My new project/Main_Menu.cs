@@ -64,5 +64,10 @@ namespace My_new_project
         {
             Application.Exit();
         }
+
+        private void Main_Menu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
